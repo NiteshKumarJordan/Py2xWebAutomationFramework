@@ -11,7 +11,7 @@ class LoginPage():
 
     # Page Locators
 
-    email_address = (By.ID, "login-username")
+    username = (By.ID, "login-username")
     password = (By.NAME, "password")
     login_button = (By.ID, "js-login-btn")
     forgot_password = (By.XPATH, "//button[normalize-space()='Forgot Password?']")
@@ -20,8 +20,8 @@ class LoginPage():
 
     # Page Actions-methods
 
-    def get_email_address(self):
-        return self.driver.find_element(*LoginPage.email_address)
+    def get_username(self):
+        return self.driver.find_element(*LoginPage.username)
 
     def get_password(self):
         return self.driver.find_element(*LoginPage.password)
@@ -40,8 +40,8 @@ class LoginPage():
 
     # Page Action - main ACTION
 
-    def login_to_vwo(self, email, pwd):
-        self.get_email_address().send_keys(email)
+    def login_to_vwo(self, user, pwd):
+        self.get_username().send_keys(user)
         self.get_password().send_keys(pwd)
         self.get_login_button().click()
 
